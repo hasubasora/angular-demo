@@ -1,10 +1,25 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
-<a [innerHTML]="msg"></a>
+<p [innerHTML]="msg"></p>
 <p *ngIf="flag">set if</p>
 <button (click)="msg = '!!!!!!!!!!!!'">OK</button>
-<button (click)="flag = true">OK</button>
-
+<button (click)="flag = !flag">flag</button>
+<button (click)="fnShow($event)">alert</button>
 <ul>
-  <li *ngFor="let item of list; let i = index">{{ item }} {{ i + 1 }}</li>
+  <li *ngFor="let item of list; let i = index" (click)="setCurrent($event,i)" [ngClass]="{'abc':i==current}"> {{ item }} {{ i + 1 }}</li>
 </ul>
+
+<h3>css</h3>
+<p [class]="myclass">is error</p>
+<p [ngClass]="{ abc: flag }">is error</p>
+<p [class.abc]="flag">is error</p>
+<p [style.color]="flag ? 'orange' : 'blue'">is error</p>
+<p [ngStyle]="mystyle">is error</p>
+<p [ngStyle]="{ color: 'pink', 'font-size': '18px', 'font-weight': '900' }">
+  is error
+</p>
+<style>
+  .abc{
+    color:red
+  }
+</style>
