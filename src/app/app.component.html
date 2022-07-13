@@ -1,4 +1,10 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+<a [innerHTML]="msg"></a>
+<p *ngIf="flag">set if</p>
+<button (click)="msg = '!!!!!!!!!!!!'">OK</button>
+<button (click)="flag = true">OK</button>
+
+<ul>
+  <li *ngFor="let item of list; let i = index">{{ item }} {{ i + 1 }}</li>
+</ul>
