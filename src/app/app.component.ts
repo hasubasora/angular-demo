@@ -1,7 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'my-app', //显示去页面配置 index.html
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
